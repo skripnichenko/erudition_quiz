@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/erudition_quiz/static/js/main.e1ffcbca.chunk.js",
+    "main.js.map": "/erudition_quiz/static/js/main.e1ffcbca.chunk.js.map",
+    "runtime-main.js": "/erudition_quiz/static/js/runtime-main.8630990d.js",
+    "runtime-main.js.map": "/erudition_quiz/static/js/runtime-main.8630990d.js.map",
+    "static/js/2.c48a1ed5.chunk.js": "/erudition_quiz/static/js/2.c48a1ed5.chunk.js",
+    "static/js/2.c48a1ed5.chunk.js.map": "/erudition_quiz/static/js/2.c48a1ed5.chunk.js.map",
+    "static/js/3.6115735d.chunk.js": "/erudition_quiz/static/js/3.6115735d.chunk.js",
+    "static/js/3.6115735d.chunk.js.map": "/erudition_quiz/static/js/3.6115735d.chunk.js.map",
+    "index.html": "/erudition_quiz/index.html",
+    "static/js/2.c48a1ed5.chunk.js.LICENSE.txt": "/erudition_quiz/static/js/2.c48a1ed5.chunk.js.LICENSE.txt",
+    "static/media/image.4669c09e.jpg": "/erudition_quiz/static/media/image.4669c09e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8630990d.js",
+    "static/js/2.c48a1ed5.chunk.js",
+    "static/js/main.e1ffcbca.chunk.js"
+  ]
+}
