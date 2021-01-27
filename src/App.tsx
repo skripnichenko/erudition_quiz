@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './components/Home';
+import Play from './components/Play/Play';
+import Seetings from './components/Seetings/Seetings.jsx';
+import {GlobalStyle} from './styles/App.style';
+import Rules from './components/Rules/Rules';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <GlobalStyle />
+    <HashRouter>
+      <Header />
+      <Route path='/' component={Home} exact />
+      <Route path='/play' component={Play} exact />
+      <Route path='/rules' component={Rules} exact />
+      <Route path='/seetings' component={Seetings} exact />
+    </HashRouter>
+    </>
   );
 }
 
