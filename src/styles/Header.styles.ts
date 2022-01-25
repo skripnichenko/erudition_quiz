@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
     background: linear-gradient(180deg, #fff, #695d5d);
     border: 2px solid #695d5d;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    padding: 2px 8px;
 }
 a {
     text-decoration: none;

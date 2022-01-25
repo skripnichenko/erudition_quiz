@@ -4,20 +4,11 @@ import { Wrapper } from './../styles/Home.style'
 
 const Home = () => {
     return (
-
-            <Wrapper>
-                <button className='play'>
-                    <Link className='play-button' to='/play'>PLAY</Link>
-                </button>
-                
-                    <button className='rules'>
-                        <Link  to='/rules'>RULES</Link>
-                    </button>
-                    <button className='seetings' >
-                        <Link to='/seetings'>SEETINGS</Link>
-                    </button>
-                
-                </Wrapper>
+        <Wrapper>
+            <Link className='play' to='/play'>PLAY</Link>
+            <Link className='rules' to='/rules'>RULES</Link>
+            <Link className='seetings' to='/seetings'>SEETINGS</Link>
+        </Wrapper>
     )
 }
 

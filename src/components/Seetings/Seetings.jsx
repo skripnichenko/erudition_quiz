@@ -10,7 +10,7 @@ const Seetings = () => {
 
     const [visibleNumber, setVisibleNumber] = useState(false);
     const [activeNumber, setActiveNumber] = useState(10);
-    
+
     const [visibleDifficulty, setVisibleDifficulty] = useState(false);
     const [activeDifficulty, setActiveDifficulty] = useState('easy');
 
@@ -37,21 +37,19 @@ const Seetings = () => {
         setVisibleNumber(prev => !prev)
     }
     const changeActiveNumber = (el) => {
+        toggleVisibleNumber();
         setActiveNumber(el);
         setVisibleNumber(false);
+        localStorage.setItem('number', activeNumber);
     }
     const toggleVisibleDifficulty = () => {
         setVisibleDifficulty(prev => !prev)
     }
     const changeActiveDifficulty = (el) => {
+        toggleVisibleDifficulty();
         setActiveDifficulty(el);
         setVisibleDifficulty(false);
-    }
-    const saveParams = () => {
-        localStorage.setItem('number', activeNumber);
         localStorage.setItem('difficulty', activeDifficulty);
-        setVisibleNumber(false);
-        setVisibleDifficulty(false);
     }
     return (
         <Wrapper>
@@ -70,17 +68,20 @@ const Seetings = () => {
                             fill="#2C2C2C"
                         />
                     </svg>
-                    <b>Choose the number of questions:</b>
-                    <span onClick={() => toggleVisibleNumber()}>{activeNumber}</span>
-                    {visibleNumber &&
-                        (<div className="sort__popup">
-                            <ul>
-                                {numbers && numbers.map((el, i) => {
-                                    return <li key={i} onClick={() => changeActiveNumber(el)}>{el}</li>
-                                })}
-                            </ul>
-                        </div>
-                        )}</div>
+                    <div className='sort__cursor' onClick={() => toggleVisibleNumber()}>
+                        <b>Choose the number of questions:</b>
+                        <span>{activeNumber}</span>
+                    </div>
+                </div>
+                {visibleNumber &&
+                    (<div className="sort__popup">
+                        <ul>
+                            {numbers && numbers.map((el, i) => {
+                                return <li key={i} onClick={() => changeActiveNumber(el)}>{el}</li>
+                            })}
+                        </ul>
+                    </div>
+                    )}
             </div>
 
             <div ref={difRef} className="sort">
@@ -98,22 +99,21 @@ const Seetings = () => {
                             fill="#2C2C2C"
                         />
                     </svg>
-                    <b>Choose the difficulty:</b>
-                    <span onClick={() => toggleVisibleDifficulty()}>{activeDifficulty}</span>
-                    {visibleDifficulty &&
-                        (<div className="sort__popup">
-                            <ul>
-                                {difficult && difficult.map((el, i) => {
-                                    return <li key={i} onClick={() => changeActiveDifficulty(el)}>{el}</li>
-                                })}
-                            </ul>
-                        </div>
-                        )}
+                    <div className='sort__cursor' onClick={() => toggleVisibleDifficulty()}>
+                        <b>Choose the difficulty:</b>
+                        <span>{activeDifficulty}</span>
+                    </div>
                 </div>
+                {visibleDifficulty &&
+                    (<div className="sort__popup">
+                        <ul>
+                            {difficult && difficult.map((el, i) => {
+                                return <li key={i} onClick={() => changeActiveDifficulty(el)}>{el}</li>
+                            })}
+                        </ul>
+                    </div>
+                    )}
             </div>
-            <button className='save' onClick={saveParams}>
-                SAVE
-                    </button>
         </Wrapper>
     )
 }

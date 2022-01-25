@@ -6,9 +6,7 @@ const Header = () => {
     return (
         <Wrapper>
             <div className="header">
-                <button className='goBack'>
-                    <Link to='/'>⬅</Link>
-                </button>
+                <Link className='goBack' to='/'>⬅</Link>
                 <h1>ERUDITION QUIZ</h1>
             </div>
         </Wrapper>

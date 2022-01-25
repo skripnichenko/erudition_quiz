@@ -48,10 +48,12 @@ export const Wrapper = styled.div`
         cursor: pointer;
       }
     }
+
+    &__cursor {
+      cursor: pointer;
+    }
   
     &__popup {
-      position: absolute;
-      right: 0;
       margin-top: 15px;
       background: #ffffff;
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
